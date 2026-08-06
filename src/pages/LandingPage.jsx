@@ -8,10 +8,7 @@ export function LandingPage() {
   return (
     <div className="space-y-20">
       <section id="home" className="relative w-full min-h-screen overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/assets/gallery1.png')" }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/assets/gallery1.png')" }} />
         <div className="absolute inset-0 bg-black/65" />
         <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-start justify-center gap-6 px-6 py-20 text-left">
           <span className="inline-flex rounded-full bg-white/6 px-4 py-2 text-sm text-white/80">BARBER MANAGER</span>
@@ -28,7 +25,12 @@ export function LandingPage() {
               className="flex w-2/3 items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#D62828] to-[#ff6b6b] px-6 py-4 text-sm font-semibold text-white shadow-lg transition-transform hover:-translate-y-1"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
               </svg>
               Agendar Agora
             </a>

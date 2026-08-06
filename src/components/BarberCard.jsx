@@ -19,7 +19,10 @@ export function BarberCard({ barber }) {
           <span>⭐ {barber.rating}</span>
         </div>
         <div className="mt-6 flex justify-end">
-          <Link to="/booking" className="inline-flex items-center gap-2 rounded-full bg-danger px-4 py-2 text-sm font-semibold text-white transition hover:scale-105">
+          <Link
+            to="/booking"
+            className="inline-flex items-center gap-2 rounded-full bg-danger px-4 py-2 text-sm font-semibold text-white transition hover:scale-105"
+          >
             Agendar
           </Link>
         </div>
