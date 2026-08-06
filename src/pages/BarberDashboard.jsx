@@ -4,7 +4,7 @@ import { AppointmentCard } from '../components/AppointmentCard';
 const schedule = [
   { id: 'a1', time: '09:00', client: 'Gabriel', service: 'Corte', status: 'Confirmado' },
   { id: 'a2', time: '11:00', client: 'Lucas', service: 'Barba', status: 'Confirmado' },
-  { id: 'a3', time: '15:00', client: 'Marina', service: 'Pigmentação', status: 'Pendente' }
+  { id: 'a3', time: '15:00', client: 'Marina', service: 'Pigmentação', status: 'Pendente' },
 ];
 
 export function BarberDashboard() {
@@ -24,16 +24,22 @@ export function BarberDashboard() {
 
       <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="space-y-6">
-          {schedule.map(appointment => (
+          {schedule.map((appointment) => (
             <AppointmentCard key={appointment.id} appointment={appointment} barberView />
           ))}
         </div>
         <div className="card-surface rounded-[32px] border border-white/10 p-8 shadow-soft">
           <h2 className="text-xl font-semibold text-white">Indicadores</h2>
           <div className="mt-6 space-y-4 text-slate-300">
-            <div className="rounded-3xl bg-black/20 p-5">Atendimentos confirmados: <strong className="text-white">8</strong></div>
-            <div className="rounded-3xl bg-black/20 p-5">Faturamento hoje: <strong className="text-white">R$ 1.320</strong></div>
-            <div className="rounded-3xl bg-black/20 p-5">Clientes novos: <strong className="text-white">3</strong></div>
+            <div className="rounded-3xl bg-black/20 p-5">
+              Atendimentos confirmados: <strong className="text-white">8</strong>
+            </div>
+            <div className="rounded-3xl bg-black/20 p-5">
+              Faturamento hoje: <strong className="text-white">R$ 1.320</strong>
+            </div>
+            <div className="rounded-3xl bg-black/20 p-5">
+              Clientes novos: <strong className="text-white">3</strong>
+            </div>
           </div>
           <div className="mt-6 flex items-center gap-3 text-danger">
             <BarChart3 className="h-5 w-5" /> Painel de desempenho

@@ -22,8 +22,15 @@ export function ProfilePage() {
       <section className="card-surface rounded-[32px] border border-white/10 p-8 shadow-soft">
         <h3 className="text-xl font-semibold text-white">Ações rápidas</h3>
         <div className="mt-6 space-y-4">
-          <button onClick={() => navigate('/client')} className="w-full rounded-full bg-white/5 px-6 py-4 text-left text-sm text-slate-200 transition hover:bg-white/10">Ver meus agendamentos</button>
-          <button className="w-full rounded-full border border-white/10 bg-black/20 px-6 py-4 text-left text-sm text-slate-200 transition hover:border-danger">Editar informações</button>
+          <button
+            onClick={() => navigate('/client')}
+            className="w-full rounded-full bg-white/5 px-6 py-4 text-left text-sm text-slate-200 transition hover:bg-white/10"
+          >
+            Ver meus agendamentos
+          </button>
+          <button className="w-full rounded-full border border-white/10 bg-black/20 px-6 py-4 text-left text-sm text-slate-200 transition hover:border-danger">
+            Editar informações
+          </button>
         </div>
       </section>
     </div>

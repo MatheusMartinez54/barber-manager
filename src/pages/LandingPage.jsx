@@ -17,8 +17,18 @@ export function LandingPage() {
             Agende com a melhor equipe. Gestão de horários, confirmações e área exclusiva para cliente, barbeiro e admin.
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
-            <a href="/booking" className="inline-flex items-center justify-center rounded-full bg-danger px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#b01f1f]">Agendar Agora</a>
-            <a href="#services" className="inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3 text-sm text-white transition hover:border-danger hover:text-danger">Ver Serviços</a>
+            <a
+              href="/booking"
+              className="inline-flex items-center justify-center rounded-full bg-danger px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#b01f1f]"
+            >
+              Agendar Agora
+            </a>
+            <a
+              href="#services"
+              className="inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3 text-sm text-white transition hover:border-danger hover:text-danger"
+            >
+              Ver Serviços
+            </a>
           </div>
         </div>
         <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-white/0 p-6 shadow-softDark">
@@ -42,7 +52,7 @@ export function LandingPage() {
           <p className="max-w-xl text-slate-300">Planos de atendimento pensados para quem busca conforto, estilo e um agendamento profissional.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {services.map(service => (
+          {services.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
         </div>
@@ -54,7 +64,7 @@ export function LandingPage() {
           <h2 className="mt-3 text-3xl font-semibold text-white">Barbeiros que entregam precisão e entrega premium.</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
-          {team.map(barber => (
+          {team.map((barber) => (
             <BarberCard key={barber.id} barber={barber} />
           ))}
         </div>
@@ -72,7 +82,10 @@ export function LandingPage() {
         </div>
       </section>
 
-      <section id="contact" className="grid gap-6 rounded-[32px] border border-white/10 bg-gradient-to-br from-white/5 via-white/10 to-white/5 p-8 shadow-softDark sm:grid-cols-[1.2fr_0.8fr]">
+      <section
+        id="contact"
+        className="grid gap-6 rounded-[32px] border border-white/10 bg-gradient-to-br from-white/5 via-white/10 to-white/5 p-8 shadow-softDark sm:grid-cols-[1.2fr_0.8fr]"
+      >
         <div>
           <span className="text-sm uppercase tracking-[0.4em] text-slate-400">Contato</span>
           <h2 className="mt-3 text-3xl font-semibold text-white">Vamos transformar sua barbearia em referência.</h2>

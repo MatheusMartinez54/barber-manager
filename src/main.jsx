@@ -14,5 +14,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Toaster position="top-right" />
       </BrowserRouter>
     </BookingProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

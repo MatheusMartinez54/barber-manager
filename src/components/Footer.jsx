@@ -7,9 +7,15 @@ export function Footer() {
           <p>Um sistema moderno de agendamento e gestão para barbearias profissionais.</p>
         </div>
         <div className="flex flex-wrap gap-4">
-          <a href="#contact" className="transition hover:text-white">Contato</a>
-          <a href="https://wa.me/5511999999999" className="transition hover:text-white">WhatsApp</a>
-          <a href="https://instagram.com" className="transition hover:text-white">Instagram</a>
+          <a href="#contact" className="transition hover:text-white">
+            Contato
+          </a>
+          <a href="https://wa.me/5511999999999" className="transition hover:text-white">
+            WhatsApp
+          </a>
+          <a href="https://instagram.com" className="transition hover:text-white">
+            Instagram
+          </a>
         </div>
       </div>
     </footer>

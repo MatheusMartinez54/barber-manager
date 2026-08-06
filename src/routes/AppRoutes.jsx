@@ -25,7 +25,14 @@ export function AppRoutes() {
         <Route path="client" element={<ClientDashboard />} />
         <Route path="barber" element={<BarberDashboard />} />
         <Route path="admin-login" element={<AdminLoginPage />} />
-        <Route path="admin" element={<AdminProtectedRoute><AdminDashboard /></AdminProtectedRoute>} />
+        <Route
+          path="admin"
+          element={
+            <AdminProtectedRoute>
+              <AdminDashboard />
+            </AdminProtectedRoute>
+          }
+        />
         <Route path="success" element={<BookingSuccessPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>

@@ -3,6 +3,7 @@
 Sistema de agendamento para barbearias com React 19, Vite, Firebase, Tailwind CSS e PWA.
 
 ## Recursos
+
 - Layout premium inspirado em apps modernos
 - Login com e-mail e Google
 - Agendamento de serviços

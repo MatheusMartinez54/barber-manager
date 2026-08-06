@@ -8,7 +8,7 @@ export function LoginPage() {
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit } = useForm();
 
-  const handleLogin = async values => {
+  const handleLogin = async (values) => {
     setLoading(true);
     toast.success('Acesso liberado.');
     navigate('/client');
@@ -24,22 +24,39 @@ export function LoginPage() {
       <form onSubmit={handleSubmit(handleLogin)} className="space-y-6">
         <label className="block space-y-2 text-sm text-slate-300">
           <span>Email</span>
-          <input type="email" {...register('email')} className="w-full rounded-3xl border border-white/10 bg-black/20 px-4 py-3 outline-none focus:border-danger" />
+          <input
+            type="email"
+            {...register('email')}
+            className="w-full rounded-3xl border border-white/10 bg-black/20 px-4 py-3 outline-none focus:border-danger"
+          />
         </label>
 
         <label className="block space-y-2 text-sm text-slate-300">
           <span>Senha</span>
-          <input type="password" {...register('password')} className="w-full rounded-3xl border border-white/10 bg-black/20 px-4 py-3 outline-none focus:border-danger" />
+          <input
+            type="password"
+            {...register('password')}
+            className="w-full rounded-3xl border border-white/10 bg-black/20 px-4 py-3 outline-none focus:border-danger"
+          />
         </label>
 
-        <button type="submit" disabled={loading} className="w-full rounded-full bg-danger px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#b01f1f] disabled:opacity-60">
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full rounded-full bg-danger px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#b01f1f] disabled:opacity-60"
+        >
           {loading ? 'Acessando...' : 'Entrar'}
         </button>
       </form>
       <div className="mt-6 flex items-center justify-between text-sm text-slate-400">
-        <Link to="/reset-password" className="hover:text-white">Recuperar senha</Link>
+        <Link to="/reset-password" className="hover:text-white">
+          Recuperar senha
+        </Link>
         <span>
-          Ainda não tem conta? <Link to="/" className="text-white font-semibold hover:text-danger">Crie uma agora</Link>
+          Ainda não tem conta?{' '}
+          <Link to="/" className="text-white font-semibold hover:text-danger">
+            Crie uma agora
+          </Link>
         </span>
       </div>
     </div>

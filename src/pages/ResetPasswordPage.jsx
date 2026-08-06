@@ -4,9 +4,13 @@ import { Link } from 'react-router-dom';
 
 export function ResetPasswordPage() {
   const [submitted, setSubmitted] = useState(false);
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const onSubmit = async values => {
+  const onSubmit = async (values) => {
     setSubmitted(true);
   };
 
@@ -20,16 +24,24 @@ export function ResetPasswordPage() {
         <div className="space-y-4 rounded-3xl border border-white/10 bg-black/20 p-6 text-slate-200">
           <p className="font-semibold text-white">Email enviado!</p>
           <p>Verifique sua caixa de entrada e siga as instruções para redefinir sua senha.</p>
-          <Link to="/login" className="inline-flex rounded-full bg-danger px-5 py-3 text-sm font-semibold text-white">Voltar ao login</Link>
+          <Link to="/login" className="inline-flex rounded-full bg-danger px-5 py-3 text-sm font-semibold text-white">
+            Voltar ao login
+          </Link>
         </div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <label className="block space-y-2 text-sm text-slate-300">
             <span>Email</span>
-            <input type="email" {...register('email', { required: 'Email obrigatório' })} className="w-full rounded-3xl border border-white/10 bg-black/20 px-4 py-3 outline-none focus:border-danger" />
+            <input
+              type="email"
+              {...register('email', { required: 'Email obrigatório' })}
+              className="w-full rounded-3xl border border-white/10 bg-black/20 px-4 py-3 outline-none focus:border-danger"
+            />
             {errors.email && <span className="text-sm text-danger">{errors.email.message}</span>}
           </label>
-          <button type="submit" className="w-full rounded-full bg-danger px-6 py-3 text-sm font-semibold text-white hover:bg-[#b01f1f]">Enviar link</button>
+          <button type="submit" className="w-full rounded-full bg-danger px-6 py-3 text-sm font-semibold text-white hover:bg-[#b01f1f]">
+            Enviar link
+          </button>
         </form>
       )}
     </div>

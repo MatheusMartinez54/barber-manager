@@ -8,7 +8,9 @@
   background-color: #121212;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   min-height: 100%;
 }
 
@@ -18,7 +20,10 @@ body {
   color: #ffffff;
 }
 
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
   font: inherit;
 }
 
@@ -39,14 +44,19 @@ button, input, textarea, select {
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #f8f8f8;
 }
 
 button {
-  transition: transform 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+  transition:
+    transform 150ms ease,
+    background-color 150ms ease,
+    box-shadow 150ms ease;
 }
 
 button:hover {

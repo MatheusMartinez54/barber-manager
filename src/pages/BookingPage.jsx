@@ -7,9 +7,7 @@ import { useBookings } from '../contexts/BookingContext';
 import toast from 'react-hot-toast';
 import dayjs from 'dayjs';
 
-const timeSlots = [
-  '09:00', '10:00', '11:00', '12:00', '14:00', '15:00', '16:00', '17:00', '18:00'
-];
+const timeSlots = ['09:00', '10:00', '11:00', '12:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
 
 export function BookingPage() {
   const navigate = useNavigate();
@@ -19,9 +17,13 @@ export function BookingPage() {
   const [selectedBarber, setSelectedBarber] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const handleClientData = values => {
+  const handleClientData = (values) => {
     addBooking({
       selectedService,
       selectedBarber,
@@ -29,7 +31,7 @@ export function BookingPage() {
       selectedTime,
       clientName: values.name,
       clientPhone: values.phone,
-      clientEmail: values.email
+      clientEmail: values.email,
     });
     toast.success('Agendamento realizado com sucesso!');
     navigate('/success');
@@ -63,7 +65,7 @@ export function BookingPage() {
       {/* Step 1: Service Selection */}
       {step === 1 && (
         <div className="grid gap-4 md:grid-cols-2">
-          {services.map(service => (
+          {services.map((service) => (
             <button
               key={service.id}
               onClick={() => {
@@ -71,9 +73,7 @@ export function BookingPage() {
                 setStep(2);
               }}
               className={`rounded-[32px] border p-6 text-left transition ${
-                selectedService?.id === service.id
-                  ? 'border-danger bg-danger/10'
-                  : 'border-white/10 bg-surface hover:border-danger'
+                selectedService?.id === service.id ? 'border-danger bg-danger/10' : 'border-white/10 bg-surface hover:border-danger'
               }`}
             >
               <div className="flex items-start justify-between gap-4">
@@ -82,9 +82,7 @@ export function BookingPage() {
                   <p className="mt-2 text-sm text-slate-300">{service.description}</p>
                   <p className="mt-3 text-sm text-slate-400">{service.duration}</p>
                 </div>
-                <span className="rounded-full bg-danger/15 px-3 py-1 text-sm font-semibold text-danger">
-                  {service.price}
-                </span>
+                <span className="rounded-full bg-danger/15 px-3 py-1 text-sm font-semibold text-danger">{service.price}</span>
               </div>
             </button>
           ))}
@@ -94,7 +92,7 @@ export function BookingPage() {
       {/* Step 2: Barber Selection */}
       {step === 2 && selectedService && (
         <div className="grid gap-4 md:grid-cols-2">
-          {team.map(barber => (
+          {team.map((barber) => (
             <button
               key={barber.id}
               onClick={() => {
@@ -102,9 +100,7 @@ export function BookingPage() {
                 setStep(3);
               }}
               className={`rounded-[32px] border p-6 text-left transition ${
-                selectedBarber?.id === barber.id
-                  ? 'border-danger bg-danger/10'
-                  : 'border-white/10 bg-surface hover:border-danger'
+                selectedBarber?.id === barber.id ? 'border-danger bg-danger/10' : 'border-white/10 bg-surface hover:border-danger'
               }`}
             >
               <div className="flex items-center gap-4">
@@ -114,7 +110,9 @@ export function BookingPage() {
                 <div>
                   <h3 className="text-xl font-semibold text-white">{barber.name}</h3>
                   <p className="text-sm text-slate-400">{barber.role}</p>
-                  <p className="mt-2 text-sm text-slate-300">{barber.experience} • {barber.rating} ✦</p>
+                  <p className="mt-2 text-sm text-slate-300">
+                    {barber.experience} • {barber.rating} ✦
+                  </p>
                 </div>
               </div>
             </button>
@@ -134,7 +132,7 @@ export function BookingPage() {
                 type="date"
                 min={getMinDate()}
                 value={selectedDate || ''}
-                onChange={e => setSelectedDate(e.target.value)}
+                onChange={(e) => setSelectedDate(e.target.value)}
                 className="w-full rounded-3xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none focus:border-danger"
               />
             </label>
@@ -146,14 +144,12 @@ export function BookingPage() {
                 <Clock className="h-4 w-4" /> Horários disponíveis
               </p>
               <div className="grid gap-3 sm:grid-cols-3">
-                {timeSlots.map(time => (
+                {timeSlots.map((time) => (
                   <button
                     key={time}
                     onClick={() => setSelectedTime(time)}
                     className={`rounded-full py-3 text-sm font-semibold transition ${
-                      selectedTime === time
-                        ? 'bg-danger text-white'
-                        : 'border border-white/10 bg-white/5 text-white hover:border-danger'
+                      selectedTime === time ? 'bg-danger text-white' : 'border border-white/10 bg-white/5 text-white hover:border-danger'
                     }`}
                   >
                     {time}
@@ -190,9 +186,7 @@ export function BookingPage() {
               </div>
               <div className="flex items-center justify-between rounded-3xl bg-black/20 p-4">
                 <span>Data</span>
-                <span className="font-semibold text-white">
-                  {dayjs(selectedDate).format('DD/MM/YYYY')}
-                </span>
+                <span className="font-semibold text-white">{dayjs(selectedDate).format('DD/MM/YYYY')}</span>
               </div>
               <div className="flex items-center justify-between rounded-3xl bg-black/20 p-4">
                 <span>Hora</span>
@@ -238,10 +232,7 @@ export function BookingPage() {
               />
             </label>
 
-            <button
-              type="submit"
-              className="w-full rounded-full bg-danger px-6 py-4 text-sm font-semibold text-white hover:bg-[#b01f1f]"
-            >
+            <button type="submit" className="w-full rounded-full bg-danger px-6 py-4 text-sm font-semibold text-white hover:bg-[#b01f1f]">
               Confirmar agendamento
             </button>
           </form>

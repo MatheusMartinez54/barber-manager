@@ -14,17 +14,17 @@ export function AdminDashboard() {
     navigate('/');
   };
 
-  const handleApprove = id => {
+  const handleApprove = (id) => {
     updateBooking(id, { status: 'Confirmado' });
     toast.success('Agendamento confirmado');
   };
 
-  const handleCancel = id => {
+  const handleCancel = (id) => {
     updateBooking(id, { status: 'Cancelado' });
     toast.error('Agendamento cancelado');
   };
 
-  const handleDelete = id => {
+  const handleDelete = (id) => {
     deleteBooking(id);
     toast('Agendamento removido', { icon: '🗑️' });
   };
@@ -34,8 +34,8 @@ export function AdminDashboard() {
     return sum + price;
   }, 0);
 
-  const pendingCount = bookings.filter(b => b.status === 'Pendente').length;
-  const confirmedCount = bookings.filter(b => b.status === 'Confirmado').length;
+  const pendingCount = bookings.filter((b) => b.status === 'Pendente').length;
+  const confirmedCount = bookings.filter((b) => b.status === 'Confirmado').length;
 
   return (
     <div className="space-y-8">
@@ -57,8 +57,8 @@ export function AdminDashboard() {
           { title: 'Total de agendamentos', value: bookings.length },
           { title: 'Confirmados', value: confirmedCount },
           { title: 'Pendentes', value: pendingCount },
-          { title: 'Faturamento', value: `R$ ${totalRevenue.toFixed(2).replace('.', ',')}` }
-        ].map(card => (
+          { title: 'Faturamento', value: `R$ ${totalRevenue.toFixed(2).replace('.', ',')}` },
+        ].map((card) => (
           <div key={card.title} className="card-surface rounded-[32px] border border-white/10 p-6 shadow-soft">
             <p className="text-sm uppercase tracking-[0.35em] text-slate-400">{card.title}</p>
             <p className="mt-4 text-3xl font-semibold text-white">{card.value}</p>
@@ -74,13 +74,11 @@ export function AdminDashboard() {
           </div>
         ) : (
           <div className="mt-6 space-y-4">
-            {bookings.map(booking => (
+            {bookings.map((booking) => (
               <div
                 key={booking.id}
                 className={`rounded-3xl border p-6 transition ${
-                  booking.status === 'Cancelado'
-                    ? 'border-white/10 bg-black/40 opacity-60'
-                    : 'border-white/10 bg-black/20 hover:border-danger'
+                  booking.status === 'Cancelado' ? 'border-white/10 bg-black/40 opacity-60' : 'border-white/10 bg-black/20 hover:border-danger'
                 }`}
               >
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
@@ -113,8 +111,8 @@ export function AdminDashboard() {
                         booking.status === 'Confirmado'
                           ? 'bg-emerald-500/20 text-emerald-400'
                           : booking.status === 'Cancelado'
-                          ? 'bg-red-500/20 text-red-400'
-                          : 'bg-yellow-500/20 text-yellow-400'
+                            ? 'bg-red-500/20 text-red-400'
+                            : 'bg-yellow-500/20 text-yellow-400'
                       }`}
                     >
                       {booking.status}

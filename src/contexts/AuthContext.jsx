@@ -6,7 +6,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithPopup,
   sendPasswordResetEmail,
-  signOut
+  signOut,
 } from 'firebase/auth';
 import toast from 'react-hot-toast';
 
@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, currentUser => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser ? { uid: currentUser.uid, email: currentUser.email } : null);
       setLoading(false);
     });
@@ -58,7 +58,7 @@ export function AuthProvider({ children }) {
     }
   };
 
-  const sendResetEmail = async email => {
+  const sendResetEmail = async (email) => {
     try {
       await sendPasswordResetEmail(auth, email);
       toast.success('Email de recuperação enviado');
@@ -73,10 +73,7 @@ export function AuthProvider({ children }) {
     toast.success('Desconectado');
   };
 
-  const value = useMemo(
-    () => ({ user, loading, loginWithEmail, loginWithGoogle, registerWithEmail, sendResetEmail, logout }),
-    [user, loading]
-  );
+  const value = useMemo(() => ({ user, loading, loginWithEmail, loginWithGoogle, registerWithEmail, sendResetEmail, logout }), [user, loading]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

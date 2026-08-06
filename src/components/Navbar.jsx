@@ -6,7 +6,7 @@ const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'Serviços', href: '#services' },
   { label: 'Equipe', href: '#team' },
-  { label: 'Contato', href: '#contact' }
+  { label: 'Contato', href: '#contact' },
 ];
 
 export function Navbar() {
@@ -24,7 +24,7 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
-          {navItems.map(item => (
+          {navItems.map((item) => (
             <a key={item.label} href={item.href} className="transition-colors hover:text-danger">
               {item.label}
             </a>
@@ -33,10 +33,16 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <Link to="/admin-login" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm transition hover:border-danger hover:text-danger">
+          <Link
+            to="/admin-login"
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm transition hover:border-danger hover:text-danger"
+          >
             <BarChart3 className="h-4 w-4" /> Admin
           </Link>
-          <Link to="/booking" className="inline-flex items-center gap-2 rounded-full bg-danger px-4 py-2 text-sm font-semibold text-white shadow-soft hover:bg-[#b01f1f]">
+          <Link
+            to="/booking"
+            className="inline-flex items-center gap-2 rounded-full bg-danger px-4 py-2 text-sm font-semibold text-white shadow-soft hover:bg-[#b01f1f]"
+          >
             <CalendarDays className="h-4 w-4" /> Agendar Agora
           </Link>
         </div>

@@ -14,11 +14,14 @@ export function useTheme() {
     window.localStorage.setItem(STORAGE_KEY, theme);
   }, [theme]);
 
-  const toggleTheme = () => setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+  const toggleTheme = () => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
 
-  const classes = useMemo(() => ({
-    root: theme === 'dark' ? 'bg-brand-900 text-white' : 'bg-white text-brand-900'
-  }), [theme]);
+  const classes = useMemo(
+    () => ({
+      root: theme === 'dark' ? 'bg-brand-900 text-white' : 'bg-white text-brand-900',
+    }),
+    [theme],
+  );
 
   return { theme, toggleTheme, classes };
 }

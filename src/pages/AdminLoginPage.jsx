@@ -7,7 +7,7 @@ export function AdminLoginPage() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  const handleLogin = e => {
+  const handleLogin = (e) => {
     e.preventDefault();
     setLoading(true);
     localStorage.setItem('admin_logged', 'true');
@@ -37,9 +37,7 @@ export function AdminLoginPage() {
         </button>
       </form>
 
-      <p className="mt-6 text-center text-xs text-slate-500">
-        Acesso rápido para testes do painel administrativo.
-      </p>
+      <p className="mt-6 text-center text-xs text-slate-500">Acesso rápido para testes do painel administrativo.</p>
     </div>
   );
 }

@@ -9,7 +9,12 @@ export function ServiceCard({ service }) {
       </div>
       <h3 className="text-2xl font-semibold text-white">{service.title}</h3>
       <p className="mt-3 text-slate-300">{service.description}</p>
-      <Link to="/booking" className="mt-6 inline-flex items-center rounded-full bg-danger px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#b01f1f]">Agendar</Link>
+      <Link
+        to="/booking"
+        className="mt-6 inline-flex items-center rounded-full bg-danger px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#b01f1f]"
+      >
+        Agendar
+      </Link>
     </article>
   );
 }
