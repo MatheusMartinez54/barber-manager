@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, rgba(214, 40, 40, 0.12), transparent 35%), #121212;
+  color: #ffffff;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(214, 40, 40, 0.35);
+}
+
+.bg-surface {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.card-surface {
+  background: rgba(18, 18, 18, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.shadow-soft {
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+input, textarea, select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f8f8f8;
+}
+
+button {
+  transition: transform 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
