@@ -14,7 +14,7 @@ export const team = [
 ];
 
 export const gallery = [
-  '/assets/gallery1.jpg',
+  '/assets/gallery1.png',
   '/assets/gallery2.jpg',
   '/assets/gallery3.jpg'
 ];

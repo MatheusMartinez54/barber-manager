@@ -10,7 +10,7 @@ export function LandingPage() {
       <section id="home" className="relative w-full min-h-screen overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/assets/gallery1.jpg')" }}
+          style={{ backgroundImage: "url('/assets/gallery1.png')" }}
         />
         <div className="absolute inset-0 bg-black/65" />
         <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-start justify-center gap-6 px-6 py-20 text-left">
