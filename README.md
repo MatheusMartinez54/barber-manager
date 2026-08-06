@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Barbearia SaaS
 
 Sistema de agendamento para barbearias com React 19, Vite, Firebase, Tailwind CSS e PWA.
@@ -31,3 +32,6 @@ npm run dev
 - `src/routes` - roteamento da aplicação
 - `src/utils` - constantes e validações
 - `src/styles` - estilos Tailwind
+=======
+# barber-manager
+>>>>>>> 9cb4c16c90032ad284d74ff22092ba2e39840fcf
