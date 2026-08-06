@@ -7,37 +7,43 @@ import { Button } from '../components/Button';
 export function LandingPage() {
   return (
     <div className="space-y-20">
-      <section id="home" className="grid gap-8 rounded-[32px] border border-white/10 bg-surface p-8 shadow-soft sm:grid-cols-[1.1fr_0.9fr] lg:p-12">
-        <div className="space-y-6">
-          <span className="inline-flex rounded-full bg-danger/15 px-4 py-2 text-sm text-danger">Premium experience</span>
-          <h1 className="max-w-xl text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">
-            Corte de qualidade. Atendimento Premium.
+      <section id="home" className="relative w-full min-h-screen overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/assets/gallery1.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-black/65" />
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-start justify-center gap-6 px-6 py-20 text-left">
+          <span className="inline-flex rounded-full bg-white/6 px-4 py-2 text-sm text-white/80">BARBER MANAGER</span>
+          <h1 className="max-w-2xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl">
+            Corte de qualidade.
+            <br />
+            Atendimento Premium.
           </h1>
-          <p className="max-w-2xl text-slate-300">
-            Agende com a melhor equipe. Gestão de horários, confirmações e área exclusiva para cliente, barbeiro e admin.
-          </p>
-          <div className="flex flex-col gap-4 sm:flex-row">
+          <p className="max-w-xl text-lg text-slate-200">Agende seu horário em menos de 1 minuto.</p>
+
+          <div className="mt-4 flex w-full max-w-md gap-3">
             <a
               href="/booking"
-              className="inline-flex items-center justify-center rounded-full bg-danger px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#b01f1f]"
+              className="flex w-2/3 items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#D62828] to-[#ff6b6b] px-6 py-4 text-sm font-semibold text-white shadow-lg transition-transform hover:-translate-y-1"
             >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
               Agendar Agora
             </a>
             <a
               href="#services"
-              className="inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3 text-sm text-white transition hover:border-danger hover:text-danger"
+              className="flex w-1/3 items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-4 text-sm text-white transition hover:border-white/20"
             >
               Ver Serviços
             </a>
           </div>
-        </div>
-        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-white/0 p-6 shadow-softDark">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(214,40,40,0.24),transparent_35%)]" />
-          <div className="relative flex h-full items-center justify-center rounded-[32px] bg-brand-900/80 p-6">
-            <div className="rounded-[28px] bg-black/30 p-8 text-center shadow-soft">
-              <p className="mb-4 uppercase tracking-[0.35em] text-slate-400">Agenda Premium</p>
-              <p className="text-3xl font-semibold text-white">Sua barbearia em um único app.</p>
-              <p className="mt-4 text-slate-300">Controle horários, bloqueios, clientes e vendas com visual moderno.</p>
+
+          <div className="mt-6 flex items-center gap-6">
+            <div className="flex items-center gap-3">
+              <div className="text-xl font-semibold text-white">★★★★★</div>
+              <div className="text-sm text-slate-200">4.9 • +850 clientes satisfeitos</div>
             </div>
           </div>
         </div>
