@@ -2,30 +2,37 @@ import { Link } from 'react-router-dom';
 
 export function BarberCard({ barber }) {
   return (
-    <article className="group overflow-hidden rounded-[20px] border border-white/6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-lg">
-      <div className="relative h-56 w-full overflow-hidden">
+    <article className="group rounded-[24px] border border-white/10 bg-[#171717] p-3 transition duration-200 hover:-translate-y-0.5 hover:border-white/20">
+      <div className="relative overflow-hidden rounded-[20px]">
         {barber.photo ? (
-          <img src={barber.photo} alt={barber.name} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+          <img
+            src={barber.photo}
+            alt={barber.name}
+            className="h-64 w-full object-cover transition duration-300 group-hover:scale-105"
+            loading="lazy"
+          />
         ) : (
-          <div className="h-full w-full bg-white/5 flex items-center justify-center text-2xl">{barber.name.charAt(0)}</div>
+          <div className="flex h-64 w-full items-center justify-center bg-white/5 text-3xl font-semibold text-white">{barber.name.charAt(0)}</div>
         )}
+
+        <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-black/60 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm">
+          ★ {barber.rating}
+        </span>
       </div>
 
-      <div className="p-6">
-        <h3 className="text-lg font-semibold text-white">{barber.name}</h3>
-        <p className="text-sm text-slate-400">{barber.role}</p>
-        <div className="mt-4 flex items-center justify-between text-sm text-slate-300">
-          <span>{barber.experience}</span>
-          <span>⭐ {barber.rating}</span>
+      <div className="mt-4 flex items-center justify-between gap-3">
+        <div>
+          <h3 className="text-lg font-semibold text-white">{barber.name}</h3>
+          <p className="mt-1 text-sm text-slate-300">{barber.role}</p>
         </div>
-        <div className="mt-6 flex justify-end">
-          <Link
-            to="/booking"
-            className="inline-flex items-center gap-2 rounded-full bg-danger px-4 py-2 text-sm font-semibold text-white transition hover:scale-105"
-          >
-            Agendar
-          </Link>
-        </div>
+
+        <Link
+          to="/booking"
+          aria-label={`Agendar com ${barber.name}`}
+          className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-[#d62828] px-4 py-2 text-xs font-semibold text-white transition hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d62828]"
+        >
+          Agendar
+        </Link>
       </div>
     </article>
   );

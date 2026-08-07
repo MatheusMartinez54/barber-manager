@@ -4,15 +4,15 @@ import { Footer } from '../components/Footer';
 
 export function MainLayout() {
   const { pathname } = useLocation();
-  const hideHeader = pathname.startsWith('/booking');
+  const isBookingPage = pathname.startsWith('/booking');
 
   return (
-    <div className="min-h-screen bg-brand-900 text-white">
-      {!hideHeader && <Navbar />}
-      <main className={`mx-auto w-full max-w-[1280px] px-4 pb-12 ${hideHeader ? 'pt-12' : 'pt-24'} sm:px-6 lg:px-8`}>
+    <div className="min-h-screen bg-[#121212] text-white">
+      {!isBookingPage && <Navbar />}
+      <main className={`mx-auto w-full max-w-6xl px-4 ${isBookingPage ? 'py-6 sm:px-6' : 'pb-16 pt-20 sm:px-6 lg:px-8'}`}>
         <Outlet />
       </main>
-      <Footer />
+      {!isBookingPage && <Footer />}
     </div>
   );
 }
