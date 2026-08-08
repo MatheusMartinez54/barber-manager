@@ -22,9 +22,9 @@ export const services = [
 ];
 
 export const team = [
-  { id: 'leo', name: 'Leonardo', role: 'Barbeiro Sênior', experience: '8 anos', rating: '4.9', photo: '/assets/team1.jpg' },
-  { id: 'bruno', name: 'Bruno', role: 'Especialista em Barba', experience: '6 anos', rating: '4.8', photo: '/assets/team2.jpg' },
-  { id: 'marcos', name: 'Marcos', role: 'Colorista', experience: '5 anos', rating: '4.7', photo: '/assets/team3.jpg' },
+  { id: 'leo', name: 'Leonardo', role: 'Barbeiro Sênior', experience: '8 anos', rating: '4.9', photo: '/assets/leonardo.png' },
+  { id: 'bruno', name: 'Bruno', role: 'Especialista em Barba', experience: '6 anos', rating: '4.8', photo: '/assets/bruno.png' },
+  { id: 'marcos', name: 'Marcos', role: 'Colorista', experience: '5 anos', rating: '4.7', photo: '/assets/marcos.png' },
 ];
 
 export const gallery = ['/assets/gallery1.png', '/assets/gallery2.jpg', '/assets/gallery3.jpg'];
